@@ -1,0 +1,12 @@
+Operation,Context,AvgTime_ms,StdDev_ms,OpsPerSec,Status
+"Individual INSERT","1000 records",204.3470,60.9146,4.8936,"OK"
+"Batch INSERT (addBatch/executeBatch)","1000 records",187.4277,49.4351,5.3354,"OK"
+"Individual INSERT","10000 records",360.0643,22.1113,2.7773,"OK"
+"Batch INSERT (addBatch/executeBatch)","10000 records",325.5037,23.2446,3.0722,"OK"
+"Full-table scan (LOANS by LoanDate range)","LOANS table",0.0000,0.0000,0.0000,"ERROR"
+"Indexed lookup (LOANS by MemberID)","LOANS table",0.0000,0.0000,0.0000,"ERROR"
+"Indexed lookup (LOANS.ReturnDate IS NULL)","LOANS table",0.0000,0.0000,0.0000,"ERROR"
+"Statement (string concat, 500 SELECTs)","Members table",59.2238,10.9125,16.8851,"OK"
+"PreparedStatement (compiled, 500 SELECTs)","Members table",20.3052,1.8749,49.2486,"OK"
+"Per-op commit (100 inserts)","100 transactions",70.5372,27.8954,14.1769,"OK"
+"Batched commit (100 inserts, 1 tx)","1 commit",17.4421,4.4287,57.3324,"OK"
